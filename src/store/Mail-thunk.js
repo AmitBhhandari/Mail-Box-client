@@ -6,7 +6,7 @@ export const sendMailHandler = (mailobj) => {
 
     const sendingmail = async () => {
       const response = await fetch(
-        `https://mailboxclient-a899b-default-rtdb.firebaseio.com/${emailId}.json`,
+        `https://mail-box-client-a72de-default-rtdb.firebaseio.com//${emailId}.json`,
         {
           method: "POST",
           body: JSON.stringify(mailobj),
@@ -31,3 +31,40 @@ export const sendMailHandler = (mailobj) => {
     }
   };
 };
+
+export const getmailHandler = () => {
+    let emailId = localStorage.getItem("mailid").replace(/[&@.]/g, "");
+    return async (Disptach) => {
+      const gettingMailList = async () => {
+        const response = await fetch(
+          `https://mail-box-client-a72de-default-rtdb.firebaseio.com//${emailId}.json`,
+          {
+            method: "Get",
+          }
+        );
+        const data = await response.json();
+        if (data.error) {
+          throw new Error("faild");
+        }
+        //   console.log(data);
+        return data;
+      };
+      try {
+        const data = await gettingMailList();
+
+        // console.log(data);
+        const transformeddata = [];
+        for (const key in data) {
+          const Obj = {
+            id: key,
+            ...data[key],
+          };
+          transformeddata.push(Obj);
+        }
+        // console.log(transformeddata);
+        Disptach(MailSliceAction.updateItem(transformeddata));
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+  };
