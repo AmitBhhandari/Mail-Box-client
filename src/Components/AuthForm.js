@@ -42,7 +42,7 @@ const AuthForm = () => {
   return (
     <Container className="pt-5">
       <Row className="justify-content-md-center">
-        <Col xs={12} md={4}>
+        <Col xs={12} md={6}>
           <Form
             className="shadow p-3 mt-5 bg-white rounded"
             onSubmit={onsubmitHandler}
