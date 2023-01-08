@@ -18,7 +18,8 @@ const TextEditing = () => {
     const mailData = {
       email: Enteredemail.current.value,
       subject: Enteredsubject.current.value,
-      text: Enteredsubject.current.value,
+      text: Enteredtext.current.value,
+      readreceipt: false,
     };
     Disptach(sendMailHandler(mailData));
     console.log(mailData, "TextEditing-FormsubmitHandler");

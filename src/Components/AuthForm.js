@@ -5,9 +5,10 @@ import { Col, Row, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 
-import { sendsignup,Sendlogin}   from "../store/Action-thunk"
 
-import { UisliceAction } from "../store/Uivisible";
+import { AuthsliceAction } from "../store/Auth";
+import { Sendlogin,sendsignup } from "../store/Action-thunk";
+import UisliceAction from "../store/Uivisible";
 
 const AuthForm = () => {
   const Disptach = useDispatch();

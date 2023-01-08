@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { ListGroup } from "react-bootstrap";
 import InboxListItem from "./InboxListItem";
 
 import { useSelector } from "react-redux";
+import { UpdateList } from "../../store/Mail-thunk";
+
 const InboxList = () => {
   const Items = useSelector((state) => state.mail.items);
   //   console.log(Items);
