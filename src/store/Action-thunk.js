@@ -1,5 +1,12 @@
 import { AuthsliceAction } from "./Auth";
 
+const Navigate = () => {
+  // let ;
+  console.log("navi");
+
+  // ;
+};
+
 const loginURL =
   "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAXeH8bRyalYevOO6HSWQeJnTU5EXyFUtw";
 const signupUrl =

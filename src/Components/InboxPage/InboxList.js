@@ -3,11 +3,11 @@ import { ListGroup } from "react-bootstrap";
 import InboxListItem from "./InboxListItem";
 
 import { useSelector } from "react-redux";
-import { UpdateList } from "../../store/Mail-thunk";
+
 
 const InboxList = () => {
   const Items = useSelector((state) => state.mail.items);
-  //   console.log(Items);
+   console.log(Items);
 
   return (
     <>
@@ -16,9 +16,10 @@ const InboxList = () => {
           <InboxListItem
             email={item.email}
             key={item.id}
-            message={item.subject}
+            subject={item.subject}
             text={item.text}
             id={item.id}
+            From={item.From}
           ></InboxListItem>
         ))}
       </ListGroup>

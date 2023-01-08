@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 import "./TextEditing.css";
 import { useDispatch } from "react-redux";
 import { sendMailHandler } from "../../store/Mail-thunk";
+import { MymailSliceAction } from "../../store/MymailSlice";
 
 
 const TextEditing = () => {
@@ -19,9 +20,11 @@ const TextEditing = () => {
       email: Enteredemail.current.value,
       subject: Enteredsubject.current.value,
       text: Enteredtext.current.value,
+      From: localStorage.getItem("mailid"),
       readreceipt: false,
     };
     Disptach(sendMailHandler(mailData));
+    Disptach(MymailSliceAction.AddSenditemList(mailData));
     console.log(mailData, "TextEditing-FormsubmitHandler");
   };
   return (
@@ -30,7 +33,7 @@ const TextEditing = () => {
         <Row>
           <Col>
     
-          <Form className="pt-1 pr=3" onSubmit={FormsubmitHandler}>
+          <Form className="pt-1  pr-3" onSubmit={FormsubmitHandler}>
               <Card style={{ width: "50rem" }}>
               
                 <Card.Body className="colours">
