@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { sendsignup, Sendlogin } from "../../Store/Action-thunk";
 import { UisliceAction } from "../../Store/Uivisible";
 
+
 const AuthForm = () => {
 
   const Disptach = useDispatch();
@@ -39,9 +40,10 @@ const AuthForm = () => {
     Disptach(UisliceAction.setisLogin());
   };
   return (
+    <div className="div">
     <Container className="pt-5">
       <Row className="justify-content-md-center">
-        <Col xs={12} md={4}>
+        <Col xs={12} md={6}>
           <Form
             className="shadow p-3 mt-5 bg-white rounded"
             onSubmit={onsubmitHandler}
@@ -93,6 +95,7 @@ const AuthForm = () => {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 

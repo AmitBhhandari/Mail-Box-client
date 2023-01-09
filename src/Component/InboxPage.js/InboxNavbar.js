@@ -16,8 +16,8 @@ const InboxNavbar = () => {
   };
   return (
     <>
-      <Navbar border="primary">
-        <Container fluid>
+      <Navbar border="primary" className="navbar">
+        <Container fluid >
           <div>
             <img
               className="thum-img"

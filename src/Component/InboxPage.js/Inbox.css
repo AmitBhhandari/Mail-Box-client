@@ -1,10 +1,12 @@
 .thum-img {
-  width: 5%;
+  width: 4%;
   border-radius: 20px;
 }
 
 .navbar {
   border-color: bisque;
+  
+  
 }
 .readreceipt {
   display: flex;
@@ -21,24 +23,21 @@
 }
 .indbox-cont {
   display: flex;
-  justify-content: space-around;
+  
   max-height: 4vh;
+  
 }
 .indbox-cont h5 {
   color: rgb(13, 26, 145);
+  margin-left: 3rem;
 }
 
 .thum-img2 {
-  width: 20%;
+  width: 10%;
   max-height: 10vh;
 }
 
 .bk-inbox {
-  /* background-image: linear-gradient(
-    to right,
-    #ff00b7 0%,
-    #031941 30%,
-    #27021d 100%
-  ); */
+
   background-color: rgb(235, 216, 253);
 }
